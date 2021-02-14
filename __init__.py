@@ -202,7 +202,7 @@ class openHABSkill(MycroftSkill):
 
 	def handle_onoff_status_intent(self, message):
 	#on/off in deutsch
-		if message.data.get('Command') == 'ein':
+		if ((message.data.get('Command') == 'ein') or( message.data.get('Command') == 'an')):
 			command = 'on'
 		elif message.data.get('Command') == 'aus':
 			command = 'off'
