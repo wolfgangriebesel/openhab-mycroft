@@ -204,10 +204,13 @@ class openHABSkill(MycroftSkill):
 	#on/off in deutsch
 		if ((message.data.get('Command') == 'ein') or( message.data.get('Command') == 'an')):
 			command = 'on'
+			command_return = 'ein'
 		elif message.data.get('Command') == 'aus':
 			command = 'off'
+			command_return = 'aus'
 		else:
 			command = message.data.get('Command')
+			command_return = message.data.get('Command')
 		messageItem = message.data.get('Item')
 
 		#We have to find the item to update from our dictionaries
