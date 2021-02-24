@@ -249,7 +249,7 @@ class openHABSkill(MycroftSkill):
 
 		if ohItem != None:
 			#if ((command == "set") or (command == "imposta") or (command == "setze") or (command == "pone")):
-			if self.voc_match(command, 'Set'):
+			if (self.voc_match(command, 'Set') or self.voc_match(command, 'setze')) :
 				if ((brightValue == None) or (int(brightValue) < 0) or (int(brightValue) > 100)):
 					self.speak_dialog('ErrorDialog')
 				else:
