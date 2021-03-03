@@ -253,7 +253,7 @@ class openHABSkill(MycroftSkill):
 				if ((brightValue == None) or (int(brightValue) < 0) or (int(brightValue) > 100)):
 					self.speak_dialog('ErrorDialog')
 				else:
-					statusCode = self.sendCommandToItem(ohItem, brightValue)
+					statusCode = self.sendCommandToItem(ohItem, str(int(brightValue)))
 			else:
 				#find current item statusCode
 				state = self.getCurrentItemStatus(ohItem)
